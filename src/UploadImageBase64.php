@@ -28,7 +28,7 @@ class UploadImageBase64 extends \Jsnlib\Copy\Urlimg
      * @param   $param['path']       儲存的路徑
      * @param   $param['mode']       檔案權限，如 '0777'
      */
-    public function setting(array $param)
+    public function setting(array $param): object
     {
         $this->setting = new \Jsnlib\Ao($param);
 
@@ -61,7 +61,7 @@ class UploadImageBase64 extends \Jsnlib\Copy\Urlimg
     }
 
     // 存檔
-    public function save()
+    public function save(): object
     {
         if (empty($this->setting))
             throw new \Exception("請先使用 save()");
@@ -84,7 +84,7 @@ class UploadImageBase64 extends \Jsnlib\Copy\Urlimg
      * @return base64img array
      * @return copy array
      */
-    public function result()
+    public function result(): array
     {
         $return['base64img'] = $this->box;
 
